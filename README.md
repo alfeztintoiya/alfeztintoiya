@@ -12,6 +12,7 @@ I'm **Alfez Tintoiya**!
 🌱 Learning deeper system design and contributing to open-source backends & infrastructure tools.  
 
 📫 Reach out via [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/alfez-tintoiya)  or [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:alfez.tintoiya25@gmail.com).
+
 ⚡ Fun fact: I love building tech platforms that blend **AI**, **communication**, and **real-world use cases** — from interview systems to contest evaluation engines.
 
 ##
