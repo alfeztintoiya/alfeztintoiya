@@ -1,4 +1,4 @@
-### Hi there 👋  
+## Hi there 👋  
 I'm **Alfez Tintoiya**!
 
 🧑‍💻 I'm a full-stack developer and backend enthusiast with experience building real-time, scalable systems using **Node.js**, **Express.js**, **PostgreSQL**, and **Docker** — focused on performance, reliability, and developer-first architecture.
