@@ -1,10 +1,18 @@
-<h1 align="center">Hello, World!<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="40"></h1>
+### Hi there 👋  
+I'm **Alfez Tintoiya**!
 
-<p align="center"><img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="600" height="300"  /></p>
+🧑‍💻 I'm a full-stack developer and backend enthusiast with experience building real-time, scalable systems using **Node.js**, **Express.js**, **PostgreSQL**, and **Docker** — focused on performance, reliability, and developer-first architecture.
 
+🛠️ I enjoy designing RESTful APIs, implementing real-time features, and optimizing backend microservices.  
+⚙️ I've worked with **FastAPI**, **Supabase**, **Firebase**, and **Prisma ORM**, and I’m always exploring ways to push production-grade systems to the next level.
 
-### :man_technologist: &nbsp;About Me :
-I am a Software Developer Engineer <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> from India.
+🎯 I'm currently diving into **WebRTC**, **LLM integration**, and scalable DevOps with Docker & FCM.  
+🏆 I'm also passionate about **competitive programming**, regularly sharpening my problem-solving skills on platforms like **LeetCode** and **Codeforces**.
+
+🌱 Learning deeper system design and contributing to open-source backends & infrastructure tools.  
+
+📫 Reach out via [LinkedIn](https://www.linkedin.com/in/alfeztintoiya) or email at `alfeztintoiya@gmail.com`.  
+⚡ Fun fact: I love building tech platforms that blend **AI**, **communication**, and **real-world use cases** — from interview systems to contest evaluation engines.
 
 
 ## 🌐 Socials
