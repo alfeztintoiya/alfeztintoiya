@@ -38,42 +38,6 @@
 
 ---
 
-## Architecture of the work I do
-
-A simplified view of the kind of system I build day to day: a request comes in, work is handed off asynchronously, agents do the research, and the user watches progress live instead of waiting on a spinner.
-
-```mermaid
-flowchart LR
-    U([User query]) --> API[FastAPI service]
-    API -->|enqueue, idempotent| Q[(Async task execution)]
-    Q --> O{Orchestrator}
-    O --> A1[Claude agent]
-    O --> A2[Gemini agent]
-    O --> A3[PydanticAI agent<br/>+ SerpAPI]
-    A1 & A2 --> M[[MCP web search]]
-    A1 & A2 & A3 --> V[Verification and<br/>source attribution]
-    V --> DB[(MongoDB / PostgreSQL)]
-    Q -. callbacks and state .-> P[Real-time progress]
-    P -.-> U
-    DB --> R([Verified, attributed result])
-```
-
----
-
-## Service-level objectives
-
-The things I hold myself to before calling a feature done.
-
-| Objective | What it means in practice |
-|:--|:--|
-| **Reliable** | Long-running jobs survive retries. Processing is idempotent, so running it twice is safe. |
-| **Consistent** | Schema changes go through migrations, consolidation and indexing, with backward-compatible APIs. |
-| **Observable** | Telemetry and clear state tracking, so "what is it doing right now?" always has an answer. |
-| **Trustworthy** | AI output is verified and attributed to sources instead of taken at face value. |
-| **Maintainable** | Another engineer should be able to read it six months later and not hate me. |
-
----
-
 ## Release history
 
 | Version | Where | When | What shipped |
