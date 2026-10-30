@@ -42,8 +42,8 @@
   <text x="90" y="28" class="mono dim">alfez@production ~ status</text>
 
   <!-- status -->
-  <circle cx="742" cy="23" r="5" fill="#4ade80" class="pulse"/>
-  <text x="754" y="28" class="mono ok">all systems operational</text>
+  <circle cx="690" cy="24" r="5" fill="#4ade80" class="pulse"/>
+  <text x="700" y="28" class="mono ok">all systems operational</text>
 
   <!-- name -->
   <text x="40" y="104" class="name">ALFEZ TINTOIYA</text>
