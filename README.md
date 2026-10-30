@@ -1,295 +1,190 @@
-::: {align="center"}
-# ALFEZ TINTOIYA
+<div align="center">
 
-### AI Engineer · Backend Engineer · Competitive Programmer
+<img src="./assets/header.svg" alt="Alfez Tintoiya — AI Engineer, Backend Engineer, Competitive Programmer" width="100%">
 
-I build software that turns complex problems into dependable systems.
+<br>
 
-```{=html}
-<p>
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-alfez--tintoiya-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alfez-tintoiya/)
+[![Email](https://img.shields.io/badge/Email-alfez.tintoiya25@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:alfez.tintoiya25@gmail.com)
+[![LeetCode](https://img.shields.io/badge/LeetCode-2011_·_Knight-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/alfez18/)
+
+**I build software that turns complex problems into dependable systems.**
+
+</div>
+
+---
+
+## `GET /alfez`
+
+> What would this profile return if it were an API? Here is the response.
+
+```json
+{
+  "name": "Alfez Tintoiya",
+  "status": "operational",
+  "role": "AI Engineer @ Solvay5 (remote)",
+  "education": "B.Tech, Computer Engineering — PDEU, Gandhinagar (2026)",
+  "building": [
+    "AI agents that verify and enrich research data",
+    "async, idempotent pipelines for long-running work",
+    "platform features: notifications, feedback, source attribution, live query progress"
+  ],
+  "cares_about": ["failure handling", "data consistency", "maintainability"],
+  "learning_next": ["system design at scale", "AI infrastructure", "agent evaluation"],
+  "open_to": ["relocation", "hard backend problems", "interesting AI systems"],
+  "latency_to_reply": "low"
+}
 ```
-`<a href="https://www.linkedin.com/in/alfez-tintoiya/">`{=html}
-`<img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn">`{=html}
-`</a>`{=html} `<a href="mailto:alfez.tintoiya25@gmail.com">`{=html}
-`<img src="https://img.shields.io/badge/Email-Get_in_touch-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email">`{=html}
-`</a>`{=html} `<a href="https://github.com/alfeztintoiya">`{=html}
-`<img src="https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub">`{=html}
-`</a>`{=html}
-```{=html}
-</p>
+
+---
+
+## Architecture of the work I do
+
+A simplified view of the kind of system I build day to day: a request comes in, work is handed off asynchronously, agents do the research, and the user watches progress live instead of waiting on a spinner.
+
+```mermaid
+flowchart LR
+    U([User query]) --> API[FastAPI service]
+    API -->|enqueue, idempotent| Q[(Async task execution)]
+    Q --> O{Orchestrator}
+    O --> A1[Claude agent]
+    O --> A2[Gemini agent]
+    O --> A3[PydanticAI agent<br/>+ SerpAPI]
+    A1 & A2 --> M[[MCP web search]]
+    A1 & A2 & A3 --> V[Verification and<br/>source attribution]
+    V --> DB[(MongoDB / PostgreSQL)]
+    Q -. callbacks and state .-> P[Real-time progress]
+    P -.-> U
+    DB --> R([Verified, attributed result])
 ```
-:::
 
-------------------------------------------------------------------------
+---
 
-## 01 / A little about me
+## Service-level objectives
 
-I'm Alfez, an AI Engineer who enjoys working where **intelligent systems
-meet solid software engineering**.
+The things I hold myself to before calling a feature done.
 
-I currently work at **Solvay5**, building capabilities for an AI-powered
-research and innovation platform. My work spans backend architecture,
-AI-agent workflows, data reliability, and real-time product features.
+| Objective | What it means in practice |
+|:--|:--|
+| **Reliable** | Long-running jobs survive retries. Processing is idempotent, so running it twice is safe. |
+| **Consistent** | Schema changes go through migrations, consolidation and indexing, with backward-compatible APIs. |
+| **Observable** | Telemetry and clear state tracking, so "what is it doing right now?" always has an answer. |
+| **Trustworthy** | AI output is verified and attributed to sources instead of taken at face value. |
+| **Maintainable** | Another engineer should be able to read it six months later and not hate me. |
 
-I care about more than getting a feature to work. I care about how it
-behaves under load, how failures are handled, how data stays consistent,
-and how another engineer will maintain it six months later.
+---
 
--   **Currently building:** AI-powered research workflows and agentic
-    systems.
--   **Engineering interests:** Backend architecture, multi-agent
-    orchestration, MCP, databases, and distributed systems.
--   **Problem-solving:** Competitive programming and algorithmic
-    thinking.
--   **Learning next:** Deeper system design, AI infrastructure, and
-    reliable agent evaluation.
+## Release history
 
-------------------------------------------------------------------------
+| Version | Where | When | What shipped |
+|:--|:--|:--|:--|
+| **v3.0** `current` | AI Engineer · **Solvay5** | Jul 2026 – now | Security, collaboration, notifications, entity feedback, field-level source attribution, real-time query progress. Backend data evolution through migrations and indexing. PydanticAI + SerpAPI agents that verify researcher identities and enrich profiles with metrics and publications. |
+| **v2.0** | AI Engineer Intern · **Solvay5** | Jan – Jun 2026 | Async, idempotent AI research pipelines on FastAPI and MongoDB. Multi-agent workflows with Claude, Gemini and MCP-based web search, using callback execution and careful state management. Indexing, telemetry and pipeline optimization. |
+| **v1.0** | Software Engineer Intern · **Rebel Minds** | May – Jul 2025 | Node.js/Express microservices: API latency down **25%** (400 ms → 300 ms) via query and connection-pool tuning. MCP servers orchestrating **10+ AI agents** for parallel inference, deployed with Docker, health checks and retries. |
 
-## 02 / What I work on
+---
 
-```{=html}
+## Dependency manifest
+
+```python
+# stack.py — what I reach for
+
+languages       = ["Python", "C++", "JavaScript", "TypeScript", "Java", "SQL"]
+backend         = ["FastAPI", "Node.js", "Express.js", "REST APIs"]
+frontend        = ["React", "Next.js", "HTML", "CSS"]
+data            = ["PostgreSQL", "MongoDB", "MySQL", "Supabase", "Firebase"]
+ai_and_agents   = ["PydanticAI", "MCP", "Claude", "Gemini", "SerpAPI"]
+infrastructure  = ["Docker", "AWS", "Linux", "Git", "GitHub"]
+foundations     = ["DSA", "DBMS", "Operating Systems", "Computer Networks", "OOP"]
+```
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=python,cpp,js,ts,java,fastapi,nodejs,express,react,nextjs,postgres,mongodb,mysql,redis,docker,aws,git,github,linux&perline=10" alt="Technology icons">
+</div>
+
+---
+
+## Selected projects
+
 <table>
-```
-```{=html}
 <tr>
-```
-```{=html}
 <td width="50%" valign="top">
-```
-```{=html}
-<h3>
-```
-◈ AI & Agentic Systems
-```{=html}
-</h3>
-```
-Building multi-agent workflows, integrating LLMs and external tools, and
-making AI-driven results more useful and reliable.
-`<br>`{=html}`<br>`{=html} `<sub>`{=html}LLM integration · PydanticAI ·
-MCP · Claude · Gemini · SerpAPI`</sub>`{=html}
-```{=html}
+
+### VirtualHire
+**Remote interview platform**
+
+Real-time video interviews with a collaborative code editor, built for the moment when two people need to think out loud together.
+
+- WebRTC peer-to-peer video calling
+- Monaco-based code editor synced over WebSockets
+- JWT authentication
+
+`MERN` · `WebRTC` · `WebSockets`
+
 </td>
-```
-```{=html}
 <td width="50%" valign="top">
-```
-```{=html}
-<h3>
-```
-◈ Backend & Infrastructure
-```{=html}
-</h3>
-```
-Designing APIs, asynchronous workflows, database models, and services
-that remain predictable as systems grow. `<br>`{=html}`<br>`{=html}
-`<sub>`{=html}Python · FastAPI · Node.js · PostgreSQL · MongoDB ·
-Docker`</sub>`{=html}
-```{=html}
+
+### Resumind
+**AI resume analyzer**
+
+Resume feedback that tells you what to change, not just what is wrong.
+
+- Section-wise evaluation and ATS optimization
+- Role-specific recommendations via Gemini
+- Google OAuth, cloud PDF processing, live progress tracking
+
+`MERN` · `PostgreSQL` · `Gemini API` · `Supabase`
+
 </td>
-```
-```{=html}
 </tr>
-```
-```{=html}
-<tr>
-```
-```{=html}
-<td width="50%" valign="top">
-```
-```{=html}
-<h3>
-```
-◈ Real-time Applications
-```{=html}
-</h3>
-```
-Developing applications where communication, synchronization, and
-responsive user experiences matter. `<br>`{=html}`<br>`{=html}
-`<sub>`{=html}WebRTC · WebSockets · React · REST APIs`</sub>`{=html}
-```{=html}
-</td>
-```
-```{=html}
-<td width="50%" valign="top">
-```
-```{=html}
-<h3>
-```
-◈ Problem Solving
-```{=html}
-</h3>
-```
-Practising algorithms and data structures to strengthen the way I reason
-about complexity and engineering trade-offs. `<br>`{=html}`<br>`{=html}
-`<sub>`{=html}DSA · C++ · LeetCode · Codeforces ·
-CodeChef`</sub>`{=html}
-```{=html}
-</td>
-```
-```{=html}
-</tr>
-```
-```{=html}
 </table>
-```
 
-------------------------------------------------------------------------
+More in my [repositories](https://github.com/alfeztintoiya?tab=repositories).
 
-## 03 / Experience
+---
 
-### AI Engineer · Solvay5
+## Benchmarks
 
-`July 2026 – Present` · Remote
+Competitive programming is where I practise breaking a hard problem down, reasoning about constraints, and finding a solution that is both correct and efficient. **1,000+ problems solved.**
 
--   Build platform capabilities across security, collaboration, research
-    workflows, notifications, feedback, source attribution, and
-    real-time query progress.
--   Evolve backend data models through migrations, schema consolidation,
-    indexing, and backward-compatible API changes.
--   Develop AI agents with **PydanticAI and SerpAPI** to verify
-    researcher identities and enrich profiles with research metrics and
-    publications.
+| Platform | Handle | Result |
+|:--|:--|:--|
+| LeetCode | [alfez18](https://leetcode.com/u/alfez18/) | **2011 · Knight · Top 3% worldwide** |
+| Codeforces | [alfez2503](https://codeforces.com/profile/alfez2503) | **1426 · Specialist** |
+| CodeChef | [alfez18](https://www.codechef.com/users/alfez18) | **1713 · 3★** |
+| Meta Hacker Cup 2025 | — | **Rank 1774 · Round 2** |
 
-### AI Engineer Intern · Solvay5
+---
 
-`January 2026 – June 2026` · Remote
+## Roadmap
 
--   Engineered backend systems for AI research pipelines using
-    asynchronous task execution, idempotent processing, FastAPI, and
-    MongoDB.
--   Integrated multi-agent workflows using Claude, Gemini, and MCP-based
-    web search.
--   Improved reliability through database indexing, telemetry, pipeline
-    optimization, and state management for long-running operations.
+- [x] Ship AI-agent pipelines that hold up in production
+- [x] Move from intern to full-time AI Engineer
+- [ ] Go deeper on system design and distributed systems
+- [ ] Learn how to evaluate agents properly, not just demo them
+- [ ] Build more AI infrastructure
+- [ ] Keep climbing the leaderboards
 
-### Software Engineer Intern · Rebel Minds
+---
 
-`May 2025 – July 2025` · PDEU IIC Incubated Startup
+<details>
+<summary><b>Runbook: how to work with me</b></summary>
 
--   Optimized Node.js and Express.js microservices, reducing average API
-    latency by **25% (400 ms → 300 ms)**.
--   Designed MCP servers to orchestrate **10+ AI agents**, enabling
-    parallel model inference.
--   Improved deployment reliability with Docker, health checks, and
-    retry mechanisms.
+<br>
 
-------------------------------------------------------------------------
+- **Best for:** backend and AI-agent problems where reliability matters more than the demo.
+- **Fastest channel:** email, [alfez.tintoiya25@gmail.com](mailto:alfez.tintoiya25@gmail.com).
+- **Good topics:** multi-agent orchestration, MCP, async pipelines, database design, algorithms.
+- **Location:** Gujarat, India. Remote-friendly and open to relocating for the right opportunity.
 
-## 04 / Technology I use
+</details>
 
-```{=html}
-<p align="center">
-```
-`<img src="https://skillicons.dev/icons?i=python,cpp,js,ts,java,fastapi,nodejs,express,react,nextjs,postgres,mongodb,mysql,redis,docker,aws,git,github,linux&perline=7" alt="Technology stack">`{=html}
-```{=html}
-</p>
-```
-  -----------------------------------------------------------------------
-  Area                                Technologies
-  ----------------------------------- -----------------------------------
-  Languages                           Python, C++, JavaScript,
-                                      TypeScript, Java, SQL
+<br>
 
-  Backend                             FastAPI, Node.js, Express.js, REST
-                                      APIs
+<div align="center">
 
-  Frontend                            React, Next.js, HTML, CSS
+**On-call:** [LinkedIn](https://www.linkedin.com/in/alfez-tintoiya/) · [Email](mailto:alfez.tintoiya25@gmail.com) · [GitHub](https://github.com/alfeztintoiya)
 
-  Data                                PostgreSQL, MongoDB, MySQL,
-                                      Supabase, Firebase
+<sub>Build thoughtfully. Make it reliable. Keep learning.</sub>
 
-  AI & Agents                         PydanticAI, MCP, Claude, Gemini,
-                                      LLM integration
-
-  Infrastructure                      Docker, AWS, Linux, Git, GitHub
-
-  Core CS                             Data Structures & Algorithms, DBMS,
-                                      Operating Systems, Computer
-                                      Networks, OOP
-  -----------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-## 05 / Selected projects
-
-### VirtualHire · Remote Interview Platform
-
-`MERN Stack` · `WebRTC` · `WebSockets`
-
-A remote interview platform focused on real-time communication and
-collaborative coding.
-
--   Built a WebRTC-based video calling service for live interviews.
--   Developed a Monaco-based collaborative code editor synchronized
-    through WebSockets.
--   Implemented JWT-based authentication.
-
-### Resumind · AI Resume Analyzer
-
-`MERN Stack` · `PostgreSQL` · `Gemini API` · `Supabase`
-
-An AI-powered resume analysis platform designed to make resume feedback
-more actionable.
-
--   Added section-wise resume evaluation, ATS optimization, and
-    role-specific recommendations.
--   Implemented Google OAuth and cloud-based PDF processing.
--   Built real-time progress tracking with an optimized API design.
-
-> Project source links can be added to the titles above once the
-> repositories are made public.
-
-------------------------------------------------------------------------
-
-## 06 / Competitive programming
-
-I enjoy competitive programming because it trains a useful engineering
-habit: break a difficult problem down, reason about constraints, and
-find a solution that is both correct and efficient.
-
-::: {align="center"}
-  -------------------------------------------------------------------------------------------------------
-  Platform                Profile                                                 Achievement
-  ----------------------- ------------------------------------------------------- -----------------------
-  LeetCode                [alfez18](https://leetcode.com/u/alfez18/)              **2011 · Knight · Top
-                                                                                  3% worldwide**
-
-  Codeforces              [alfez2503](https://codeforces.com/profile/alfez2503)   **1426 · Specialist**
-
-  CodeChef                [alfez18](https://www.codechef.com/users/alfez18)       **1713 · 3-Star**
-
-  Meta Hacker Cup         2025                                                    **Rank 1774 · Round 2**
-  -------------------------------------------------------------------------------------------------------
-
-**1,000+ algorithmic problems solved** across competitive programming
-platforms and online judges.
-:::
-
-------------------------------------------------------------------------
-
-## 07 / GitHub activity
-
-::: {align="center"}
-`<img width="49%" src="https://github-readme-stats.vercel.app/api?username=alfeztintoiya&show_icons=true&hide_border=true&rank_icon=github&theme=transparent" alt="Alfez's GitHub statistics">`{=html}
-`<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=alfeztintoiya&hide_border=true&theme=transparent" alt="Alfez's contribution streak">`{=html}
-
-`<img width="45%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=alfeztintoiya&layout=compact&hide_border=true&theme=transparent" alt="Most used languages">`{=html}
-:::
-
-------------------------------------------------------------------------
-
-## 08 / Let's connect
-
-I'm always happy to connect with engineers, builders, and people working
-on interesting software problems.
-
--   **LinkedIn:**
-    [linkedin.com/in/alfez-tintoiya](https://www.linkedin.com/in/alfez-tintoiya/)
--   **Email:** <alfez.tintoiya25@gmail.com>
--   **GitHub:**
-    [github.com/alfeztintoiya](https://github.com/alfeztintoiya)
-
-::: {align="center"}
-*Build thoughtfully. Make it reliable. Keep learning.*
-:::
+</div>
