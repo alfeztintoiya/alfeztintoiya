@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="900" height="240" role="img" aria-label="Alfez Tintoiya - AI Engineer, Backend Engineer, Competitive Programmer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#121a33"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.5" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#ffffff" stroke-opacity="0.04"/>
+    </pattern>
+    <style>
+      .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+      .name { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 54px; letter-spacing: 3px; fill: url(#accent); }
+      .sub  { font-size: 17px; fill: #cbd5e1; }
+      .dim  { font-size: 13px; fill: #64748b; }
+      .ok   { font-size: 13px; fill: #4ade80; }
+      .l1 { opacity: 0; animation: fade 0.6s ease forwards 0.3s; }
+      .l2 { opacity: 0; animation: fade 0.6s ease forwards 0.9s; }
+      .l3 { opacity: 0; animation: fade 0.6s ease forwards 1.5s; }
+      .l4 { opacity: 0; animation: fade 0.6s ease forwards 2.1s; }
+      .pulse { animation: pulse 2s ease-in-out infinite; }
+      .cursor { animation: blink 1s steps(1) infinite; }
+      .sweep { animation: sweep 4s ease-in-out infinite alternate; }
+      @keyframes fade { to { opacity: 1; } }
+      @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+      @keyframes blink { 50% { opacity: 0; } }
+      @keyframes sweep { from { transform: translateX(0); } to { transform: translateX(520px); } }
+    </style>
+  </defs>
+
+  <rect width="900" height="240" rx="14" fill="url(#bg)"/>
+  <rect width="900" height="240" rx="14" fill="url(#grid)"/>
+
+  <!-- window dots -->
+  <circle cx="26" cy="24" r="6" fill="#f87171"/>
+  <circle cx="46" cy="24" r="6" fill="#fbbf24"/>
+  <circle cx="66" cy="24" r="6" fill="#4ade80"/>
+  <text x="90" y="28" class="mono dim">alfez@production ~ status</text>
+
+  <!-- status -->
+  <circle cx="742" cy="23" r="5" fill="#4ade80" class="pulse"/>
+  <text x="754" y="28" class="mono ok">all systems operational</text>
+
+  <!-- name -->
+  <text x="40" y="104" class="name">ALFEZ TINTOIYA</text>
+
+  <!-- lines -->
+  <text x="40" y="145" class="mono sub l1"><tspan fill="#22d3ee">$</tspan> role      <tspan fill="#94a3b8">=</tspan> "AI Engineer @ Solvay5"</text>
+  <text x="40" y="171" class="mono sub l2"><tspan fill="#22d3ee">$</tspan> focus     <tspan fill="#94a3b8">=</tspan> ["agentic systems", "backend", "reliability"]</text>
+  <text x="40" y="197" class="mono sub l3"><tspan fill="#22d3ee">$</tspan> principle <tspan fill="#94a3b8">=</tspan> "make it work, then make it dependable"</text>
+  <text x="40" y="223" class="mono sub l4"><tspan fill="#22d3ee">$</tspan> <tspan class="cursor" fill="#818cf8">█</tspan></text>
+
+  <!-- sweeping accent line -->
+  <rect x="40" y="116" width="120" height="3" rx="1.5" fill="url(#accent)" class="sweep"/>
+</svg>
